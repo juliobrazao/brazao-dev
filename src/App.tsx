@@ -1,3 +1,3 @@
 export default function App() {
-  <>My App</>;
+  return <>My App</>;
 }
