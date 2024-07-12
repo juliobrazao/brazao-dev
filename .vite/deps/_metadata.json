@@ -1,0 +1,25 @@
+{
+  "hash": "82f16613",
+  "configHash": "364283e7",
+  "lockfileHash": "91440040",
+  "browserHash": "1c047ccd",
+  "optimized": {
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "a8a33a7f",
+      "needsInterop": true
+    },
+    "bootstrap/dist/js/bootstrap": {
+      "src": "../../node_modules/bootstrap/dist/js/bootstrap.js",
+      "file": "bootstrap_dist_js_bootstrap.js",
+      "fileHash": "b8a2a324",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-DZZM6G22": {
+      "file": "chunk-DZZM6G22.js"
+    }
+  }
+}
