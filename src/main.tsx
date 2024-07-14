@@ -1,6 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <RouterProvider router={routes} />
+);
