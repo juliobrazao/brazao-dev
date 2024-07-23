@@ -44,7 +44,13 @@ export default function ContactModal() {
           </div>
 
           <div className="mt-3">
-            <button className="btn btn-primary w-100">Send</button>
+            <button
+              type="button"
+              className="btn btn-primary w-100"
+              onClick={() => alert("Enviou mensagem!")}
+            >
+              Send
+            </button>
           </div>
         </form>
       </ModalBody>
