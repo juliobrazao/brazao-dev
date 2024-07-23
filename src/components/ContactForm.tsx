@@ -3,6 +3,8 @@ import { AppContext } from "../contexts/AppContext";
 import { useForm } from "react-hook-form";
 import * as y from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useMessage } from "../hooks/useMessage";
+import { Message } from "../models/message";
 
 const FormSchema = y.object({
   name: y.string().min(20).max(50),
@@ -14,12 +16,13 @@ type FormType = y.InferType<typeof FormSchema>;
 
 export default function ContactForm() {
   const { show, setShow } = useContext(AppContext);
+  const { mutateAsync: sendMessage, isPending: sendIsPending } = useMessage();
   const { register, handleSubmit, reset } = useForm<FormType>({
     resolver: yupResolver(FormSchema),
   });
 
-  const handleSubmitForm = (message: any) => {
-    alert(JSON.stringify(message));
+  const handleSubmitForm = (message: Partial<Message>) => {
+    sendMessage(message);
     reset();
     setShow && setShow(!show);
   };
@@ -65,7 +68,9 @@ export default function ContactForm() {
         </div>
 
         <div className="mt-3">
-          <button className="btn btn-primary w-100">Send</button>
+          <button className="btn btn-primary w-100" disabled={sendIsPending}>
+            Send
+          </button>
         </div>
       </form>
     </>
