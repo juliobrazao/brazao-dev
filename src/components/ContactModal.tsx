@@ -8,7 +8,7 @@ export default function ContactModal() {
   return (
     <Modal centered show={show}>
       <ModalHeader closeButton onHide={() => setShow && setShow(!show)}>
-        Contact
+        <strong>Contact</strong>
       </ModalHeader>
       <ModalBody>
         <form>
@@ -34,6 +34,17 @@ export default function ContactModal() {
               id="email"
               aria-describedby="email"
             />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label">
+              Message
+            </label>
+            <textarea name="" className="form-control" id=""></textarea>
+          </div>
+
+          <div className="mt-3">
+            <button className="btn btn-primary w-100">Send</button>
           </div>
         </form>
       </ModalBody>
