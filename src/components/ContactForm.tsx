@@ -22,6 +22,7 @@ export default function ContactForm() {
   });
 
   const handleSubmitForm = (message: Partial<Message>) => {
+    alert(JSON.stringify(message));
     sendMessage(message);
     reset();
     setShow && setShow(!show);
