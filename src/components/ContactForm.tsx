@@ -38,7 +38,7 @@ export default function ContactForm() {
           <input
             type="text"
             {...register("name")}
-            className="form-control"
+            className="form-control rounded-pill"
             id="name"
             aria-describedby="name"
           />
@@ -51,7 +51,7 @@ export default function ContactForm() {
           <input
             type="email"
             {...register("email")}
-            className="form-control"
+            className="form-control rounded-pill"
             id="email"
             aria-describedby="email"
           />
@@ -63,13 +63,16 @@ export default function ContactForm() {
           </label>
           <textarea
             {...register("message")}
-            className="form-control"
+            className="form-control rounded-pill px-3"
             id="message"
           ></textarea>
         </div>
 
         <div className="mt-3">
-          <button className="btn btn-primary w-100" disabled={sendIsPending}>
+          <button
+            className="btn btn-primary rounded-pill w-100"
+            disabled={sendIsPending}
+          >
             Send
           </button>
         </div>
